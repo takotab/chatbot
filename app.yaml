@@ -28,7 +28,6 @@ resources:
   memory_gb: 6
 
 skip_files:
-- (.*(.zip))
 - preperation_files/
 
 #[START cloudsql_settings]

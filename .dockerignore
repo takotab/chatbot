@@ -9,5 +9,6 @@ README.md
 LICENSE
 .vscode
 ./env
+
 preperation_files/
 start.sh

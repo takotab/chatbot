@@ -6,8 +6,7 @@ __pycache__/
 # C extensions
 *.so
 
-*/preperation_files/*
-*/prepfiles.zip*
+
 
 # Distribution / packaging
 .Python
@@ -108,4 +107,7 @@ venv.bak/
 
 .vscode/*
 swagger_server/*
+
+# Personal additions
 prepfiles.zip
+*/preperation_files/*

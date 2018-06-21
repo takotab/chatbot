@@ -43,19 +43,30 @@
         $("#buttons").html("");
         $("#chatbox").append(userHtml);
         document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
-        $.get("/get", { msg: rawText_msg }).done(function (data) {
+        $.get("/get", { msg: rawText_msg }).done(function (data, data_2) {
+          
           arr = data.split("__$qr__")
-          var botHtml = '<p class="botText"><span>' + arr[0] + '</span></p>';
-          //<i onclick="thumbs_up(this)" class="fa fa-thumbs-up"></i><i onclick="thumbs_down(this)" class="fa fa-thumbs-down"></i>
-          $("#chatbox").append(botHtml);
-
+          var normal_text =  arr[0].split("\n")
+          for (i = 1; i < $(normal_text).length; i++) {
+            if(normal_text[i] == ""){
+              var a= 1;
+            }
+            else{
+            var botHtml = '<p class="botText"><span>' + normal_text[i] + '</span></p>';
+            $("#chatbox").append(botHtml);
+            }  
+          }
           for (i = 1; i < $(arr).length; i++) {
             var text_button = '"' + arr[i] + '"';
             var second_botHtml = $('<input id="choice_' + i + '" type="submit" value="' + arr[i] + '">')
               .attr('onclick', 'clickbutton(' + text_button + ')');
             $("#buttons").append(second_botHtml);
+            if(data_2 =! ""){
+              $("#chatbox").append(data_2);
+            }
           }
           document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+
         });
         //}
       }

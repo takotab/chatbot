@@ -1,7 +1,7 @@
 import os
 # import random
 import pandas as pd
-from .chatbot import dialog
+# 
 import argparse
 # import copy
 import numpy as np
@@ -372,7 +372,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     import time
-
+    from .chatbot import dialog
+    
     dialog_ = dialog(word2vec = args.word2vec == 1)
     prep = prep_data( batch_size = 64, dialog_class= dialog_) #data_filename=args.data_filename,
 

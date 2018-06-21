@@ -2,13 +2,13 @@ import logging
 import time
 import datetime
 import codecs
-import clr
+import clr # pylint: disable=E0401
 from flask import Flask, current_app
 from .weather import weather
 import os
 from .nlp import nlp_class
 from . import modules as Modules
-
+from .attachement import check_attachement_str
 
 # Global Variables
 end_of_text = "XDISCONNECT"
@@ -25,7 +25,7 @@ os.system(command)
 clr.AddReference(path_engine)
 with codecs.open(path_ink_json, 'r', 'utf-8-sig') as data_file:
     ink_json = data_file.read()
-from Ink.Runtime import Story  # pylint: ignore
+from Ink.Runtime import Story  # pylint: disable=E0401
 
 ink_story = {}
 return_value = {}
@@ -54,11 +54,6 @@ def show_post(recipient_id, msg):
     if "$reset" in msg:
         msg = reset(recipient_id)
 
-    if "$face" in msg:
-        module.handel_face(msg)
-        msg = " "
-    # if "$meet$" in msg:
-    #     ink_story = module.goto_knot(ink_story, recipient_id, "meeting")
 
     return_value[recipient_id] = ""
     msg = msg.replace("%20", " ")
@@ -138,6 +133,7 @@ def inky_brain(ink_story, recipient_id, choice=None):
 
         # ink_story = check_intent(ink_story, recipient_id)
     i = 0
+    return_value[recipient_id] = ""
     while ink_story[recipient_id].canContinue and \
             not module.get_wait(recipient_id):
 
@@ -173,30 +169,8 @@ def inky_brain(ink_story, recipient_id, choice=None):
                 ink_story = module.make_meeting(ink_story, recipient_id)
             if next_.startswith("$wait"):
                 ink_story = module.wait(ink_story, recipient_id, next_)
-            if next_.startswith("$attachment"):
-                print("atttachemt")
-                return_value[recipient_id] += str(next_) + '\n'
-                print("added to return_value", next_)
-            if next_.startswith("$verhuizen_attachment"):
-                ink_story, filename = module.verhuizen_attachment(
-                    ink_story, recipient_id)
-                return_value[recipient_id] += "$attachment," + \
-                    str(filename) + '\n'
-            if next_.startswith("$factuur_attachment"):
-                ink_story, filename = module.factuur_attachment(
-                    ink_story, recipient_id)
-                return_value[recipient_id] += "$attachment," + \
-                    str(filename) + '\n'
-            if next_.startswith("$meeting_attachment"):
-                ink_story, filename = module.meeting_attachment(
-                    ink_story, recipient_id)
-                return_value[recipient_id] += "$attachment," + \
-                    str(filename) + '\n'
-            if next_.startswith("$vergelijken_attachment"):
-                ink_story, filename = module.vergelijken_attachment(
-                    ink_story, recipient_id)
-                return_value[recipient_id] += "$attachment," + \
-                    str(filename) + '\n'
+            
+            ink_story, return_value = check_attachement_str(next_, module, recipient_id, ink_story, return_value)
 
             if next_.startswith("$sql_vergelijken"):
                 ink_story = module.sql_vergelijken(ink_story, recipient_id)
@@ -205,6 +179,7 @@ def inky_brain(ink_story, recipient_id, choice=None):
             next_ = ""
         elif next_.startswith("%"):
             next_ = ""
+        
         return_value[recipient_id] += str(next_) + '\n'
 
         print("cancontinue = ", ink_story[recipient_id].canContinue,

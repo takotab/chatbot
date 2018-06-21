@@ -26,7 +26,7 @@ RUN python pythonnet/setup.py bdist_wheel \
 COPY requirements.txt /app/requirements.txt
 WORKDIR /app
 RUN pip install -r requirements.txt
-COPY prepfiles.zip /app/prepfiles.zip
+#COPY prepfiles.zip /app/prepfiles.zip
 COPY . /app
 
 # Make port 8080 available to the world outside this container

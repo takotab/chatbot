@@ -23,11 +23,15 @@ entrypoint: gunicorn -b :$PORT main:app
 runtime_config:
   python_version: 3
 
+automatic_scaling:
+  min_num_instances: 1
+  
 resources:
   cpu: 1
   memory_gb: 6
 
 skip_files:
+- prepfiles.zip  
 - preperation_files/
 
 #[START cloudsql_settings]

@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  web:
+    build: .
+    command: python --debug=5858
+    volumes:
+      - .:/code
+    ports:
+      - "8080:8080"
+      - "5858:5858"

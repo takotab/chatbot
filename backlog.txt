@@ -1,0 +1,9 @@
+use clr
+
+pictures
+insert nlp  https://stackoverflow.com/a/35688187/6950549
+nlp multiple models
+save to datastore
+
+thumbs_up/ thump_down /report problem
+

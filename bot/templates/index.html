@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>TINA Devoteam Chatbot</h1>
+  <h3>A web implementation of the Devoteam Chatbot by Tako and team. {{random_id}}</h3>
+  <div class="feedback_button"> <input id="feedback_button" type="submit" value="Give feedback"></div>
+  <div>
+    <div id="chatbox">
+      <p class="botText">
+        <span>Hi! I'm my name is Tina.</span>
+      </p>
+
+    </div>
+    <div id="userInput">
+      <buttons id="buttons">
+
+      </buttons>
+      <div id="test_id">
+
+      </div>
+      <input id="textInput" type="text" name="msg" placeholder="Message">
+      <input id="buttonInput" type="submit" value="Send">
+    </div>
+    <script>
+      function getBotResponse() {
+        var rawText = $("#textInput").val();
+
+        if (rawText == "") {
+          return;
+        }
+
+        var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+        var rawText_msg = $("#textInput").val() + "__id__{{random_id}}";
+        $("#textInput").val("");
+        $("#buttons").html("");
+        $("#chatbox").append(userHtml);
+        document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+        $.get("/get", { msg: rawText_msg }).done(function (data) {
+          arr = data.split("__$qr__")
+          var botHtml = '<p class="botText"><span>' + arr[0] + '</span></p>';
+          //<i onclick="thumbs_up(this)" class="fa fa-thumbs-up"></i><i onclick="thumbs_down(this)" class="fa fa-thumbs-down"></i>
+          $("#chatbox").append(botHtml);
+
+          for (i = 1; i < $(arr).length; i++) {
+            var text_button = '"' + arr[i] + '"';
+            var second_botHtml = $('<input id="choice_' + i + '" type="submit" value="' + arr[i] + '">')
+              .attr('onclick', 'clickbutton(' + text_button + ')');
+            $("#buttons").append(second_botHtml);
+          }
+          document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+        });
+        //}
+      }
+      $("#textInput").keypress(function (e) {
+        if (e.which == 13) {
+          getBotResponse();
+        }
+      });
+      $("#buttonInput").click(function () {
+        getBotResponse();
+      });
+      function clickbutton(data) {
+        $("#textInput").val('"' + data + '"');
+        $("#buttons").html("");
+        //setTimeout(10000)
+        getBotResponse();
+      }
+      function thumbs_up(x) {
+        x.classList.toggle("fa-thumbs-down");
+      }
+      //function thumbs_down(x) {
+        //$.post( "test.php",("/get", { msg: rawText_msg })
+          //x.classList.toggle("fa-thumbs-down");
+
+      //}
+
+    </script>
+  </div>
+</body>
+
+</html>

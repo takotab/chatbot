@@ -1,0 +1,50 @@
+1,Hey! Ik ben de Devoteam Virtual Agent!
+1,Waarmee kan ik je helpen?
+1, Ok je hebt een vraag over het weer %context_weather:weer
+1,manier 2
+1,Dus het weer is volgens de voorspelling in Schinnen nu zal  zijn unknown en de momenteel verwachte temperatuur is 0. %nlp_loc:Schinnen%nlp_time:nu
+2,Hallo! Ik ben de Devoteam Virtual Agent!
+2,Waarmee kan ik je helpen?
+2, Ok je hebt een vraag over het weer %context_weather:weer
+2,manier 3
+2,Dus het weer  in Zaanstad nu zal  zijn unknown en de op het moment verwachte temperatuur is 0. %nlp_loc:Zaanstad%nlp_time:nu
+3,Hallo! Ik ben de Devoteam Virtual Agent!
+3,Waarmee kan ik je helpen?
+3, Ok je hebt een vraag over het weer %context_weather:weer
+3,manier 3
+3,Dus het weer  in Pekela nu zal  zijn unknown en de op het moment verwachte temperatuur is 0. %nlp_loc:Pekela%nlp_time:nu
+4,Hoi! Ik ben de Devoteam Virtual Agent!
+4,Waarmee kan ik je van dienst zijn?
+4, Ok je hebt een vraag over het weer %context_weather:weer
+4,manier van iets zeggen 1
+4,Dus het weer is volgens de voorspelling in Vlissingen nu zal  zijn unknown en de momenteel verwachte temperatuur is 0. %nlp_loc:Vlissingen%nlp_time:nu
+5,Hey! Ik ben de Devoteam Virtual Agent!
+5,Waarmee kan ik je helpen?
+5, Ok je hebt een vraag over het weer %context_weather:weersomstandigheden
+5,manier van iets zeggen 1
+5,Dus het weer is volgens de voorspelling in Nijkerk nu zal  zijn unknown en de momenteel verwachte temperatuur is 0. %nlp_loc:Nijkerk%nlp_time:nu
+6,Hallo! Ik ben de Devoteam Virtual Agent!
+6,Waarmee kan ik je helpen?
+6, Ok je hebt een vraag over het weer %context_weather:weersomstandigheden
+6,manier 2
+6,Dus het weer is volgens de voorspelling in Terneuzen nu zal  zijn unknown en de op het moment verwachte temperatuur is 0. %nlp_loc:Terneuzen%nlp_time:nu
+7,Hallo! Ik ben de Devoteam Virtual Agent!
+7,Waarmee kan ik je van dienst zijn?
+7, Ok je hebt een vraag over het weer %context_weather:weer
+7,manier 2
+7,Dus het weer  in Zeist nu zal  zijn unknown en de op het moment verwachte temperatuur is 0. %nlp_loc:Zeist%nlp_time:nu
+8,Hey! Ik ben de Devoteam Virtual Agent!
+8,Waarmee kan ik je van dienst zijn?
+8, Ok je hebt een vraag over het weer %context_weather:weer
+8,manier 2
+8,Dus het weer is volgens de voorspelling in Papendrecht nu zal  zijn unknown en de op het moment verwachte temperatuur is 0. %nlp_loc:Papendrecht%nlp_time:nu
+9,Hoi! Ik ben de Devoteam Virtual Agent!
+9,Waarmee kan ik je van dienst zijn?
+9, Ok je hebt een vraag over het weer %context_weather:weersomstandigheden
+9,manier 2
+9,Dus het weer is volgens de voorspelling in Venray nu zal  zijn unknown en de momenteel verwachte temperatuur is 0. %nlp_loc:Venray%nlp_time:nu
+10,Hoi! Ik ben de Devoteam Virtual Agent!
+10,Waarmee kan ik je helpen?
+10, Ok je hebt een vraag over het weer %context_weather:weer
+10,manier 3
+10,Dus het weer  in Bedum nu zal  zijn unknown en de op het moment verwachte temperatuur is 0. %nlp_loc:Bedum%nlp_time:nu

@@ -102,10 +102,10 @@ class dialog:
 
                 del model
             elif self.lang == 'NL':
-                nl_embedding_pckl = os.path.join(config.PREPERATION_DIR,'nl-embedding.pckl')
-                print("NL embedding", nl_embedding_pckl)
-                with open(nl_embedding_pckl, 'rb') as f:
-                    self.emb_array, self.int2str, self.str2int = pickle.load(f)
+                from .embedding import NL
+                self.emb_array = NL.EMB_ARRAY
+                self.int2str = NL.INT2STR
+                self.str2int = NL.STR2INT
         else:
             print()
             self.word_vectors = {abc: np.random.randn(300,) for abc in [

@@ -1,11 +1,10 @@
-from scipy.spatial.distance import cosine
 import config
 import tensorflow as tf
 import numpy as np
 from .chatbot import dialog
 from . import procces_data
 from . import check_prep_files
-
+from .match import *
 check_prep_files.init()
 
 # Please note I rewrote this thing but only without intent yet so hopefully this will be replaced
@@ -63,45 +62,4 @@ def _tfInference(text):
 #     y_output_model = y_
 
 
-def match_text(value,options):
-    value = value.replace("\"","")
-    value = value_extras(value)
-    value_emb,_,_ = dialog_.sentence2int(value)
-    value_emb = emb_average(value_emb)
-    
-    best = {"choice":None,"confidence":0}
-    for i, option in enumerate(options):
-        option = option.replace("\"","")
-        if value == option:
-            best = {"choice":i, "confidence":1}
-            print("found a direct match:", best, options,value) 
-            return best
-
-        option_emb,_,_ = dialog_.sentence2int(option)
-        option_emb = emb_average(option_emb)
-
-        sim = 1 - cosine(value_emb, option_emb)
-        print(option,sim)
-        if sim > best["confidence"]:
-            best["confidence"] = sim
-            best["choice"] = i
-
-    if best["confidence"] > 0.9:
-        print("found a match:", best, options,value) 
-    
-    return best
-
-
-def emb_average(emb_list):
-    return np.max(emb_list, axis=0)
-
-def value_extras(value):
-    """
-    made to add some extra words to value.
-    make the classification better.
-    """
-    if value == "Neen":
-        value = ["Neen nee niet"]
-    
-    return value
 

@@ -1,5 +1,8 @@
 import numpy as np
-from . import match_text
+from .match import match_text
+from . import embedding    
+from . import sub_embedding
+
 
 def test_match_text():
     results = [('Jazeker',0),
@@ -7,13 +10,16 @@ def test_match_text():
     ("Jazeker dat klopt",0),
     ('Nee dat klopt niet',1),
     ("Neen dat is niet mijn naam mijn naam is tako",1)]
+    nederlands = embedding.language("NL")
     for result in results:
-        check(result)
+        check(result,nederlands)
     
-def check(results):
+def check(results,nederlands):
+
     value = results[0]
     options = ["Jazeker","Neen"]
-    best = match_text(value,options)
+    
+    best = match_text(value,options,nederlands)
     assert best["choice"] == results[1]
 
 def test_sub():
@@ -27,8 +33,7 @@ def test_sub():
 
 def test_embedding():
     text = "hello mijn naam is Tako Tabak. Ik wil graag! dat dit gelijk blrijt werken 893"
-    
-    from . import embedding
+
     nederlands = embedding.language("NL")
     emb = nederlands.get_sentence_embedding(text)
     print(emb.shape)
@@ -37,8 +42,6 @@ def test_embedding():
 def test_sub_sentence():
 
     text = "hello mijn naam is Tako Tabak. Ik wil graag! dat dit gelijk blrijt werken 893"
-    
-    from . import sub_embedding
 
     subsentence = sub_embedding.add_subsentence(text)
 
@@ -53,11 +56,9 @@ def test_chatbot():
 
     text = "hello mijn naam is Tako Tabak. Ik wil graag! dat dit gelijk blrijt werken 893"
     
-    from . import embedding
     nederlands = embedding.language("NL")
     emb = nederlands.get_sentence_embedding(text)
     print(emb.shape)
-    from . import sub_embedding
     subword = sub_embedding.add_subword(text)
     emb = np.concatenate((emb,subword),axis = 1)
 

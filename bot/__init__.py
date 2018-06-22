@@ -24,12 +24,10 @@ def create_app(config, debug=False, testing=False, config_overrides=None):
         logging.basicConfig(level=logging.INFO)
 
     @app.route("/")
-    def home():        
-        # with app.app_context():
-        print("project_id: {app.config.PROJECT_ID}")
-        print(app.config["PROJECT_ID"])
+    def home():                
         id_ = ''.join(random.choice(string.ascii_uppercase + string.digits)
                       for _ in range(N))
+        print("new user:",id_)
         return render_template("index.html", random_id=id_)
 
     @app.route("/get")
@@ -44,17 +42,13 @@ def create_app(config, debug=False, testing=False, config_overrides=None):
         # session_return = '<img src="/image/vergelijken.png" class="widthSet" alt="pic">'
         session_return = session_return.replace("$qr", "__$qr__")
         session_return = session_return.replace("$button", "__$qr__")
-        
+
         return session_return
 
     @app.route('/image/<filename>')
     def root(filename):
         loc = os.path.join(os.getcwd(), 'image', "generated", filename)
         print("exist:",os.path.isfile(loc),"loc:",loc)
-        if filename == 'a':
-            filename = 'dyn_Melis_Schaap.png'
-        print("got request", loc)
-        # return filename
         return send_file(loc, mimetype='image/gif')
 
     # Add an error handler that reports exceptions to Stackdriver Error

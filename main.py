@@ -39,4 +39,4 @@ if __name__ == '__main__':
     parser.add_argument("--port", type=int, default=8080,
                         help="The port to be exposted")
     params = parser.parse_args()
-    app.run(host='127.0.0.1', port=params.port, debug=True)
+    app.run(host='0.0.0.0', port=params.port, debug=True)

@@ -6,7 +6,6 @@ logging.getLogger().addHandler(logging.StreamHandler())
 
 def init():
     if _no_prep():
-        print(_no_prep())
         zip_destination = os.path.join(os.getcwd(),"prepfiles.zip")
         destination = os.path.join(os.getcwd())
 

@@ -26,6 +26,7 @@ def file_len(fname):
 
 class dialog:
     def __init__(self, word2vec = False, max_words = 100, lang = 'NL'):
+
         self.lang = lang
         self.max_words = max_words
         self.input_depth = 382
@@ -91,7 +92,7 @@ class dialog:
             #         print(self.alphabet)
         self.r_alphabet = {
             self.alphabet[abc]: abc for abc in list(self.alphabet.keys())}
-        print(self.r_alphabet)
+        # print(self.r_alphabet)
         if word2vec:
             if self.lang == 'EN':
                 # Load Google's pre-trained Word2Vec model.

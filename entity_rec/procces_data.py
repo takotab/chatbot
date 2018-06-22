@@ -52,9 +52,9 @@ class prep_data:
                              'nlp_street', 'nlp_postcode', "nlp_city",
                              'number',] # and '_intent' but that is to give the intent
         self.make_lower_prob = 0.5
-        print(self.goal_dict)
-        print("num_goals =",len(self.goal_legend) )
-        print("num_class_f_l =",len(self.current_info) )
+        # print(self.goal_dict)
+        # print("num_goals =",len(self.goal_legend) )
+        # print("num_class_f_l =",len(self.current_info) )
         try:
             self.name = ('num_goals_' +str(len(self.goal_legend))+ "_num_class_f_l_" +                 
                     str(len(self.current_info)) +"_"+ data_filename[-13:-4])
@@ -372,7 +372,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     import time
-    from .chatbot import dialog
+    # from .chatbot import dialog
     
     dialog_ = dialog(word2vec = args.word2vec == 1)
     prep = prep_data( batch_size = 64, dialog_class= dialog_) #data_filename=args.data_filename,

@@ -1,6 +1,4 @@
-use clr
-
-pictures
+make work on app engine
 insert nlp  https://stackoverflow.com/a/35688187/6950549
 nlp multiple models
 save to datastore

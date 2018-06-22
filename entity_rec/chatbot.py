@@ -103,7 +103,8 @@ class dialog:
 
                 del model
             elif self.lang == 'NL':
-                from .embedding import NL
+                from .embedding.lang import NL
+                # self.emb = lang_wrapper.language("NL")
                 self.emb_array = NL.EMB_ARRAY
                 self.int2str = NL.INT2STR
                 self.str2int = NL.STR2INT
@@ -149,8 +150,9 @@ class dialog:
         return any(char.isdigit() for char in inputString)
 
     def sentence2int(self, sentence, sentence_dict = False, add_eos = False, _class = 0):
+        sentence = [word for word in wordpunct_tokenize(sentence)]
         try:
-            sentence = [word for word in wordpunct_tokenize(sentence)]
+            pass
         except:
             print("FAILED to do wordpunct_tokenize with", sentence)
             TypeError("FAILED to do wordpunct_tokenize ")

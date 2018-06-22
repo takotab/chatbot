@@ -185,6 +185,7 @@ class nlp_class:
                     entity = re.findall(regex, msg)
             else:
                 entity = re.findall(regex, msg)
+                
             if len(entity):
                 key = dict_with_regex[regex]["key"]
                 for value in entity:

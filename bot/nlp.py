@@ -58,30 +58,30 @@ class nlp_class:
                 obj = resp[key]
                 if float(resp[key]["confidence"]) < CONFIDENCE_LEVEL or key is 'intent_unknown':
                     print("not sure about", obj, "break")
-                    break
-
-                value = obj["text"]
-                #  {'entityName': 'intent_unknown', 'entityScore': '0', 'entityValue':True}
-                if key.startswith("intent_"):
-                    key = key.replace("intent_", "")
-                    print("Debug: NLP: intent_ ", key, " detected")
-                    if key == "unkown":
-                        print("Debug: NLP: key = ", key, "break")
-                    elif key == "stop" and len(msg.split(" ")) > 1:
-                        print("Debug: NLP: key = ", key, "too long",
-                              len(msg.split(" ")), "break")
-
-                    self.module.set_variable(
-                        ink_story, recipient_id, "intent", key)
-
                 else:
-                    print(value, " detected as ", key)
-                    if key in ["nlp_f_name", "nlp_l_name"] and value[0].islower():
-                        print("Debug:NLP: to upper")
-                        value = value[0].upper() + value[1:]
 
-                    self.module.set_variable(
-                        ink_story, recipient_id, key, value)
+                    value = obj["text"]
+                    #  {'entityName': 'intent_unknown', 'entityScore': '0', 'entityValue':True}
+                    if key.startswith("intent_"):
+                        key = key.replace("intent_", "")
+                        print("Debug: NLP: intent_ ", key, " detected")
+                        if key == "unkown":
+                            print("Debug: NLP: key = ", key, "break")
+                        elif key == "stop" and len(msg.split(" ")) > 1:
+                            print("Debug: NLP: key = ", key, "too long",
+                                len(msg.split(" ")), "break")
+
+                        self.module.set_variable(
+                            ink_story, recipient_id, "intent", key)
+
+                    else:
+                        print(value, " detected as ", key)
+                        if key in ["nlp_f_name", "nlp_l_name"] and value[0].islower():
+                            print("Debug:NLP: to upper")
+                            value = value[0].upper() + value[1:]
+
+                        self.module.set_variable(
+                            ink_story, recipient_id, key, value)
 
         else:
             print("Debug: NLP: Some type of error")

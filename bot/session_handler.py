@@ -133,6 +133,7 @@ def inky_brain(ink_story, recipient_id, choice=None):
 
         # ink_story = check_intent(ink_story, recipient_id)
     i = 0
+    return_value = {}
     return_value[recipient_id] = ""
     while ink_story[recipient_id].canContinue and \
             not module.get_wait(recipient_id):

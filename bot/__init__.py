@@ -39,13 +39,13 @@ def create_app(config, debug=False, testing=False, config_overrides=None):
             session_return = session_handler.show_post(id_, userText)
         
         #attachement check
-        attachment = attachement_check(session_return)
+        session_return = attachement_check(session_return)
 
         # session_return = '<img src="/image/vergelijken.png" class="widthSet" alt="pic">'
         session_return = session_return.replace("$qr", "__$qr__")
         session_return = session_return.replace("$button", "__$qr__")
-        # print(f"session_return {session_return}")
-        return session_return, attachment
+        
+        return session_return
 
     @app.route('/image/<filename>')
     def root(filename):

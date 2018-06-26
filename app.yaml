@@ -38,6 +38,7 @@ skip_files:
   __pychache__/*
   env/*
   .vscode/*
+  entity_rec/*
 
 #[START cloudsql_settings]
 beta_settings:

@@ -36,28 +36,28 @@ def _no_prep():
 
 
 def _download():
-    logging.info("Start downloading preperation files")
-    logging.info("This can take a while (~5min)")
-    file_id = '1-oSe1f08q2MA6s4ix_5ELFZ6U5wp-aKP'
-    zip_destination = os.path.join(os.getcwd(),"prepfiles.zip")
-    start_time = time.time()
-    download_file_from_google_drive(file_id, zip_destination)
-    print(time.time()-start_time)
-    destination = os.path.join(os.getcwd())
-    # import cloudstorage as gcs 
-    # filenames = ['nl-embedding.pckl',
-    #             'list_w_cities.txt',
-    #             'list_w_first_names.txt',
-    #             'list_w_last_names.txt',]
-    # os.mkdir('preperation_files')
-    # for filename in filenames:
-    #     gcs_file = gcs.open("/chatbot-tina.appspot.com/preperation_files/"+filename)
-    #     content = gcs_file.read()
-    #     with open('preperation_files' + filename) as f:
-    #         f.write(content)
-    #     gcs_file.close()
+    # logging.info("Start downloading preperation files")
+    # logging.info("This can take a while (~5min)")
+    # file_id = '1-oSe1f08q2MA6s4ix_5ELFZ6U5wp-aKP'
+    # zip_destination = os.path.join(os.getcwd(),"prepfiles.zip")
+    # start_time = time.time()
+    # download_file_from_google_drive(file_id, zip_destination)
+    # print(time.time()-start_time)
+    # destination = os.path.join(os.getcwd())
+    import cloudstorage as gcs 
+    filenames = ['nl-embedding.pckl',
+                'list_w_cities.txt',
+                'list_w_first_names.txt',
+                'list_w_last_names.txt',]
+    os.mkdir('preperation_files')
+    for filename in filenames:
+        gcs_file = gcs.open("/chatbot-tina.appspot.com/preperation_files/"+filename)
+        content = gcs_file.read()
+        with open('preperation_files' + filename) as f:
+            f.write(content)
+        gcs_file.close()
 
-    _unzip(zip_destination,destination)
+    # _unzip(zip_destination,destination)
 
 def _unzip(zip_destination,destination):
     import zipfile

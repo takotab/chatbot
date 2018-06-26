@@ -6,23 +6,27 @@ logging.getLogger().addHandler(logging.StreamHandler())
 
 def init():
     if _no_prep():
+        
         zip_destination = os.path.join(os.getcwd(),"prepfiles.zip")
         destination = os.path.join(os.getcwd())
 
         if os.path.isfile(zip_destination):
+            print("not yet the zip file")
             print(os.listdir(os.getcwd()))
             _unzip(zip_destination,destination)
         else:
             _download()
 
 def _no_prep():   
-
+    print("checking if everyting is in place")
     cwd = os.getcwd()
     if os.path.isdir(os.path.join(cwd,"preperation_files")):
         if not os.path.isfile(os.path.join(cwd,"preperation_files","nl-embedding.pckl")):
+            print("embedding not yet downloaded")
             return True
         files = os.listdir(os.path.join(cwd,"preperation_files"))
         if len(files) is not 4:
+            print("not yet the folder")
             return True
     else:
         return True

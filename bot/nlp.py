@@ -5,10 +5,10 @@ import re
 # from flask import current_app
 CONFIDENCE_LEVEL = 0.8
 
+
 class nlp_class:
     def __init__(self, module):
         self.module = module
-
 
     def match_text(self, value, options):
         """
@@ -17,16 +17,16 @@ class nlp_class:
         input:
             Value   str of userinput
             options the options that the text could be
-        
+
         The return depends on the confince level so
             - if the confidence if high enough than "choice_" + option index
             - otherwise just the msg
-        
+
 
         """
-        choice = entity_rec.match_text(value,options)
+        choice = entity_rec.match_text(value, options)
         if choice["confidence"] > CONFIDENCE_LEVEL:
-            return "$choice_" +  str(choice["choice"])
+            return "$choice_" + str(choice["choice"])
         return value
 
     def interpert_message(self, ink_story, recipient_id, msg):
@@ -37,7 +37,7 @@ class nlp_class:
         # dt/text/entities?text=
         resp = None
 
-        if not len(msg.replace(" ","")):
+        if not len(msg.replace(" ", "")):
             return ink_story
 
         resp = entity_rec.predict(msg)
@@ -69,7 +69,7 @@ class nlp_class:
                             print("Debug: NLP: key = ", key, "break")
                         elif key == "stop" and len(msg.split(" ")) > 1:
                             print("Debug: NLP: key = ", key, "too long",
-                                len(msg.split(" ")), "break")
+                                  len(msg.split(" ")), "break")
 
                         self.module.set_variable(
                             ink_story, recipient_id, "intent", key)
@@ -185,7 +185,7 @@ class nlp_class:
                     entity = re.findall(regex, msg)
             else:
                 entity = re.findall(regex, msg)
-                
+
             if len(entity):
                 key = dict_with_regex[regex]["key"]
                 for value in entity:

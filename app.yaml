@@ -34,6 +34,10 @@ resources:
 skip_files:
   prepfiles.zip  
   preperation_files/
+  .git/*
+  __pychache__/*
+  env/*
+  .vscode/*
 
 #[START cloudsql_settings]
 beta_settings:

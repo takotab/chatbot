@@ -1,6 +1,5 @@
 import random
 import string
-import pytest
 import requests
 
 # @pytest.mark.usefixtures('app')

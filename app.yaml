@@ -32,8 +32,8 @@ resources:
   memory_gb: 16
 
 skip_files:
-- prepfiles.zip  
-- preperation_files/
+  prepfiles.zip  
+  preperation_files/
 
 #[START cloudsql_settings]
 beta_settings:

@@ -32,7 +32,7 @@ resources:
   memory_gb: 16
 
 skip_files:
-  # prepfiles.zip  
+  prepfiles.zip  
   preperation_files/
   .git/*
   __pychache__/*

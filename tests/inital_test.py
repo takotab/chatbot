@@ -3,13 +3,13 @@ import pytest
 import random
 import string
 import requests
+# from entity_rec.match import match_text
+# use python3 -m pytest tests/ to test
 
-# @pytest.mark.usefixtures('app')
+
 def test_start(id_ = '25468eee'):
     """
-    GIVEN a Flask application
-    WHEN the '/login' page is posted to (POST)
-    THEN check the response is valid
+    
     """
     response_content = interact(id_, 'e')
 

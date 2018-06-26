@@ -1,4 +1,4 @@
-# import entity_rec
+import entity_rec
 import urllib.request
 import json
 import re
@@ -24,7 +24,7 @@ class nlp_class:
 
 
         """
-        return "$choice_0" 
+        # return "$choice_0" 
         choice = entity_rec.match_text(value, options)
         if choice["confidence"] > CONFIDENCE_LEVEL:
             return "$choice_" + str(choice["choice"])
@@ -40,7 +40,7 @@ class nlp_class:
 
         if not len(msg.replace(" ", "")):
             return ink_story
-        return ink_story
+        # return ink_story
         resp = entity_rec.predict(msg)
         try:
             pass

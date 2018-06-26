@@ -1,7 +1,7 @@
 import numpy as np
-from .match import match_text
-from . import embedding    
-from . import sub_embedding
+from entity_rec.match import match_text
+from entity_rec import embedding    
+from entity_rec import sub_embedding
 
 
 def test_match_text():
@@ -26,7 +26,7 @@ def test_sub():
 
     text = "hello mijn naam is Tako Tabak. Ik wil graag! dat dit gelijk blrijt werken 893"
     
-    from . import sub_embedding
+    from entity_rec import sub_embedding
     subword = sub_embedding.add_subword(text)
     print(subword.shape)
     assert subword.shape == (17, 39)
@@ -50,7 +50,7 @@ def test_sub_sentence():
 def test_chatbot():
     # from .chatbot import dialog
     # from . import procces_data
-    from . import check_prep_files
+    from entity_rec import check_prep_files
 
     check_prep_files.init()
 

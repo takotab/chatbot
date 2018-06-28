@@ -6,23 +6,27 @@ logging.getLogger().addHandler(logging.StreamHandler())
 
 def init():
     if _no_prep():
+        
         zip_destination = os.path.join(os.getcwd(),"prepfiles.zip")
         destination = os.path.join(os.getcwd())
 
         if os.path.isfile(zip_destination):
+            print("not yet the zip file")
             print(os.listdir(os.getcwd()))
             _unzip(zip_destination,destination)
         else:
             _download()
 
 def _no_prep():   
-
+    print("checking if everyting is in place")
     cwd = os.getcwd()
     if os.path.isdir(os.path.join(cwd,"preperation_files")):
         if not os.path.isfile(os.path.join(cwd,"preperation_files","nl-embedding.pckl")):
+            print("embedding not yet downloaded")
             return True
         files = os.listdir(os.path.join(cwd,"preperation_files"))
         if len(files) is not 4:
+            print("not yet the folder")
             return True
     else:
         return True
@@ -40,6 +44,19 @@ def _download():
     download_file_from_google_drive(file_id, zip_destination)
     print(time.time()-start_time)
     destination = os.path.join(os.getcwd())
+    # import cloudstorage as gcs 
+    # filenames = ['nl-embedding.pckl',
+    #             'list_w_cities.txt',
+    #             'list_w_first_names.txt',
+    #             'list_w_last_names.txt',]
+    # os.mkdir('preperation_files')
+    # for filename in filenames:
+    #     gcs_file = gcs.open("/chatbot-tina.appspot.com/preperation_files/"+filename)
+    #     content = gcs_file.read()
+    #     with open('preperation_files' + filename) as f:
+    #         f.write(content)
+    #     gcs_file.close()
+
     _unzip(zip_destination,destination)
 
 def _unzip(zip_destination,destination):

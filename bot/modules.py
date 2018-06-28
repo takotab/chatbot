@@ -49,16 +49,6 @@ class modules:
         }
         self.info_dict = {}
 
-    def start_id(self, recipient_id):
-        print("new id made in modules")
-        self.info_dict = {recipient_id: {"wait": False,
-                                         "_wait_var_to_be_changed": [],
-                                         "_num_wait_var": None,
-                                         "current_knot": None,
-                                         "intent_stop": False,
-                                         "intent_asked": False,
-                                         "last_return_value": "",
-                                         "prev_intent": ""}}
 
     def set_prev_intent(self, ink_story, recipient_id):
         self.start_id(recipient_id)

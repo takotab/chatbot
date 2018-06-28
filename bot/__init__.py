@@ -1,67 +1,39 @@
-import numpy as np
 import logging
-from flask import Flask, current_app, render_template, request, send_file
-import time
-import os
-import logging
-import random
-import string
-# from google.cloud import error_reporting
-from .attachement import attachement_check
+import datetime
+from flask import current_app
+from .user import User
+from interact import interact
 
-from . import session_handler
-N = 20
+# possibly better with not holding everyone in memory
+# also not so good if thing go wrong 
+# currently need to update users in the end
+users = {}
 
 
-def create_app(config, debug=False, testing=False, config_overrides=None):
+def message(recipient_id, msg):
+    logging.info("bot.incoming_msg " + str(datetime.datetime.utcnow()) + " messeage from " +recipient_id + ":"+ msg)
+    # return "hello " + str(recipient_id) + str(ink_story)
+    try:
+        user = users[recipient_id]
+    except:
+        logging.info("New recipient created id:" + recipient_id)
+        user = User()  # initiating new story
+    user.recieved_msg(msg)
 
-    app = Flask(__name__)
-    app.config.from_object(config)
+    # reset inky
+    if "$reset" in msg:
+        msg = user.reset()
 
-    app.debug = debug
-    app.testing = testing
-    if not testing:
-        logging.basicConfig(level=logging.INFO)
+    msg = msg.replace("%20", " ")
 
-    @app.route("/")
-    def home():                
-        id_ = ''.join(random.choice(string.ascii_uppercase + string.digits)
-                      for _ in range(N))
-        print("new user:",id_)
-        return render_template("index.html", random_id=id_)
+    # calling controller method
+    user, return_msg = interact(user = user, msg=msg)
 
-    @app.route("/get")
-    def get_bot_response():        
-        userText, id_ = request.args.get('msg').split("__id__")
-        with app.app_context():
-            session_return = session_handler.show_post(id_, userText)
-        
-        #attachement check
-        session_return = attachement_check(session_return)
-
-        # session_return = '<img src="/image/vergelijken.png" class="widthSet" alt="pic">'
-        session_return = session_return.replace("$qr", "__$qr__")
-        session_return = session_return.replace("$button", "__$qr__")
-
-        return session_return
-
-    @app.route('/image/<filename>')
-    def root(filename):
-        loc = os.path.join(os.getcwd(), 'image', "generated", filename)
-        print("exist:",os.path.isfile(loc),"loc:",loc)
-        return send_file(loc, mimetype='image/gif')
-
-    # Add an error handler that reports exceptions to Stackdriver Error
-    # Reporting. Note that this error handler is only used when debug
-    # is False
-    # @app.errorhandler(500)
-    # def server_error(e):
-    #     client = error_reporting.Client(app.config['PROJECT_ID'])
-    #     client.report_exception(
-    #         http_context=error_reporting.build_flask_context(request))
-    #     return """
-    #     An internal error occurred.
-    #     """, 500
+    users[recipient_id] = user
+    logging.info("bot.return_msg " + str(datetime.datetime.utcnow()) + " messeage to " +recipient_id + ":"+ return_msg)
     
+    # cleaning up( not strickly nessary but clear)
+    del user
+    
+    return return_msg
 
-    return app

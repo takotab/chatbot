@@ -1,7 +1,8 @@
 version: '2'
-
+# currently not using this
 services:
   web:
+    
     build: .
     command: python --debug=5858
     volumes:
@@ -9,3 +10,5 @@ services:
     ports:
       - "8080:8080"
       - "5858:5858"
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS='/app/Chatbot TINA-a050ea22b80f.json'

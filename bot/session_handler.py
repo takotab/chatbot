@@ -1,123 +1,25 @@
 import logging
 import time
 import datetime
-import codecs
-import clr # pylint: disable=E0401
 from flask import Flask, current_app
 from .weather import weather
 import os
 from .nlp import nlp_class
 from . import modules as Modules
-from .attachement import check_attachement_str
+from .attachement_str import check_attachement_str
 
 # Global Variables
 end_of_text = "XDISCONNECT"
-path_engine = os.path.join(os.getcwd(), "ink", "ink-engine-runtime.dll")
-ink_file = os.path.join(os.getcwd(), "ink", "current_inky.ink")
-# ink_file = os.path.join(os.getcwd(), "ink", "alt_test_inky_tako.ink")
-path_ink_json = ink_file + ".json"
-
-command = 'mono ' + os.path.join(os.getcwd(),
-                                 "ink", "inklecate.exe") + " " + ink_file
-logging.info(command)
-os.system(command)
-
-clr.AddReference(path_engine)
-with codecs.open(path_ink_json, 'r', 'utf-8-sig') as data_file:
-    ink_json = data_file.read()
-from Ink.Runtime import Story  # pylint: disable=E0401
 
 ink_story = {}
 return_value = {}
-app = Flask(__name__)
 module = Modules.modules()
 
 nlpclient = nlp_class(module)
 import entity_rec
 
-def show_post(recipient_id, msg):
-    # existing recipient or new recipient
-    print(datetime.datetime.utcnow(), "messeage from", recipient_id, msg)
-    print("project-id", current_app.config["PROJECT_ID"])
-    # ink_story = resp = entity_rec.predict(msg)
-    # print(ink_story)
-    # return "hello " + str(recipient_id) + str(ink_story)
-    try:
-        # print("recipient found")
-        ink_story[recipient_id]
-    except:
-        print("Debug: Narrative session handler: New recipient created")
-        init_recipient(recipient_id)  # initiating new story
-    
-
-    # reset inky
-    if "$reset" in msg:
-        msg = reset(recipient_id)
-
-
-    return_value[recipient_id] = ""
-    msg = msg.replace("%20", " ")
-
-    # calling controller method
-    ext = controller(ink_story=ink_story,
-                     recipient_id=recipient_id, msg=msg)
-    print("show_post ", ext)
-    return ext
-
-
-def reset(recipient_id):
-    del ink_story[recipient_id]
-    module.start_id(recipient_id)
-    init_recipient(recipient_id)
-    msg = " "
-    return msg
-
-# story for every recipient
-
-
-def init_recipient(recipient_id):
-    ink_story[recipient_id] = Story(ink_json)
 
 # controller
-
-
-def controller(ink_story, recipient_id, msg):
-    print("controller", recipient_id, msg)
-    # function message
-    if "intent_stop_" in msg:
-        if "intent_stop_0" == msg:
-            msg = reset(recipient_id)
-        elif "intent_stop_1" == msg:
-            module.info_dict[recipient_id]["intent_stop"] = False
-            last_return_value = module.info_dict[recipient_id]["last_return_value"]
-            print("DEBUG:not STOP: info_dict:", module.info_dict[recipient_id])
-            return last_return_value
-
-    if len(ink_story[recipient_id].currentChoices):
-        options = [ink_choice.text.replace("$button","").replace("$qr","") for ink_choice in ink_story[recipient_id].currentChoices]
-        msg = nlpclient.match_text(msg, options)
-
-    if "$choice_" in msg:
-        msg_split = msg.split("_")
-        print("controller is going to make choice ", msg_split[1])
-        return inky_brain(ink_story, recipient_id, choice=msg_split[1])
-
-    else:
-        # normal message
-        module.set_prev_intent(ink_story, recipient_id)
-        ink_story = nlpclient.interpert_message(ink_story, recipient_id, msg)
-        if module.info_dict[recipient_id]["prev_intent"] == "":
-            check_intent(ink_story, recipient_id)
-        return_value, stop = do_intent_stop_stuff(ink_story, recipient_id)
-        if stop:
-            print("stop == ", stop)
-            return return_value
-        # if module.ink_handel.get_variable(ink_story, recipient_id, "nlp_newinfo"):
-        #     # print("changed something!!")
-        #     return inky_brain(ink_story= ink_story, recipient_id= recipient_id, choice = 0)
-        return inky_brain(ink_story=ink_story,
-                          recipient_id=recipient_id,
-                          choice=None)
 
 
 def inky_brain(ink_story, recipient_id, choice=None):

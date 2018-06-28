@@ -3,6 +3,10 @@ import os
 import requests
 import time
 logging.getLogger().addHandler(logging.StreamHandler())
+from google.cloud import storage
+# credentials='./Chatbot TINA-a050ea22b80f.json'
+storage_client = storage.Client()
+BUCKET = storage_client.get_bucket('chatbot-tina.appspot.com')
 
 def init():
     if _no_prep():
@@ -44,19 +48,22 @@ def _download():
     # download_file_from_google_drive(file_id, zip_destination)
     # print(time.time()-start_time)
     # destination = os.path.join(os.getcwd())
-    import cloudstorage as gcs 
-    filenames = ['nl-embedding.pckl',
+    
+    filenames = ['list_w_last_names.txt',
+                'nl-embedding.pckl',
                 'list_w_cities.txt',
-                'list_w_first_names.txt',
-                'list_w_last_names.txt',]
-    os.mkdir('preperation_files')
-    for filename in filenames:
-        gcs_file = gcs.open("/chatbot-tina.appspot.com/preperation_files/"+filename)
-        content = gcs_file.read()
-        with open('preperation_files' + filename) as f:
-            f.write(content)
-        gcs_file.close()
+                'list_w_first_names.txt',]
 
+    # filenames = ['chatbot_text.txt']
+
+    os.mkdir('preperation_files')
+
+    for filename in filenames:
+        blob = BUCKET.blob("preperation_files/" + filename)
+        blob.download_to_filename(os.path.join('preperation_files', filename))
+        print("succesful downloaded ",filename)
+        print(os.path.isfile(os.path.join('preperation_files', filename)))
+        assert 0 == 1
     # _unzip(zip_destination,destination)
 
 def _unzip(zip_destination,destination):

@@ -12,20 +12,6 @@ from .attachement import check_attachement_str
 
 # Global Variables
 end_of_text = "XDISCONNECT"
-path_engine = os.path.join(os.getcwd(), "ink", "ink-engine-runtime.dll")
-ink_file = os.path.join(os.getcwd(), "ink", "current_inky.ink")
-# ink_file = os.path.join(os.getcwd(), "ink", "alt_test_inky_tako.ink")
-path_ink_json = ink_file + ".json"
-
-command = 'mono ' + os.path.join(os.getcwd(),
-                                 "ink", "inklecate.exe") + " " + ink_file
-logging.info(command)
-os.system(command)
-
-clr.AddReference(path_engine)
-with codecs.open(path_ink_json, 'r', 'utf-8-sig') as data_file:
-    ink_json = data_file.read()
-from Ink.Runtime import Story  # pylint: disable=E0401
 
 ink_story = {}
 return_value = {}
@@ -36,26 +22,12 @@ nlpclient = nlp_class(module)
 import entity_rec
 
 
-def reset(recipient_id):
-    del ink_story[recipient_id]
-    module.start_id(recipient_id)
-    init_recipient(recipient_id)
-    msg = " "
-    return msg
-
-# story for every recipient
-
-
-def init_recipient(recipient_id):
-    ink_story[recipient_id] = Story(ink_json)
-
-
 def interact(ink_story, recipient_id, msg):
-    print("controller", recipient_id, msg)
+    
     # function message
     if "intent_stop_" in msg:
         if "intent_stop_0" == msg:
-            msg = reset(recipient_id)
+            msg = ink_story.reset()
         elif "intent_stop_1" == msg:
             module.info_dict[recipient_id]["intent_stop"] = False
             last_return_value = module.info_dict[recipient_id]["last_return_value"]

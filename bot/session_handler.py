@@ -35,35 +35,6 @@ module = Modules.modules()
 nlpclient = nlp_class(module)
 import entity_rec
 
-def show_post(recipient_id, msg):
-    # existing recipient or new recipient
-    print(datetime.datetime.utcnow(), "messeage from", recipient_id, msg)
-    print("project-id", current_app.config["PROJECT_ID"])
-    # ink_story = resp = entity_rec.predict(msg)
-    # print(ink_story)
-    # return "hello " + str(recipient_id) + str(ink_story)
-    try:
-        # print("recipient found")
-        ink_story[recipient_id]
-    except:
-        print("Debug: Narrative session handler: New recipient created")
-        init_recipient(recipient_id)  # initiating new story
-    
-
-    # reset inky
-    if "$reset" in msg:
-        msg = reset(recipient_id)
-
-
-    return_value[recipient_id] = ""
-    msg = msg.replace("%20", " ")
-
-    # calling controller method
-    ext = controller(ink_story=ink_story,
-                     recipient_id=recipient_id, msg=msg)
-    print("show_post ", ext)
-    return ext
-
 
 def reset(recipient_id):
     del ink_story[recipient_id]
@@ -78,10 +49,8 @@ def reset(recipient_id):
 def init_recipient(recipient_id):
     ink_story[recipient_id] = Story(ink_json)
 
-# controller
 
-
-def controller(ink_story, recipient_id, msg):
+def interact(ink_story, recipient_id, msg):
     print("controller", recipient_id, msg)
     # function message
     if "intent_stop_" in msg:
@@ -209,7 +178,7 @@ def inky_brain(ink_story, recipient_id, choice=None):
         module.info_dict[recipient_id]["last_return_value"] = return_value[recipient_id]
     print("DEBUG:not STOP: info_dict:", module.info_dict[recipient_id])
 
-    return return_value[recipient_id]
+    return ink_story, return_value[recipient_id]
 
 
 def check_intent(ink_story, recipient_id):

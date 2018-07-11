@@ -1,7 +1,11 @@
-ATTACHMENT_START = "$attachment,"
-ATTACHMENT_END = ",attachment$"
+from flask import current_app
+
 
 def check_attachement_str(next_, module,recipient_id,ink_story,return_value):
+
+    ATTACHMENT_END = current_app.config["ATTACHMENT_END"]
+    ATTACHMENT_START = current_app.config["ATTACHMENT_START"]
+
     if next_.startswith("$attachment"):
         print("atttachemt")
         return_value[recipient_id] += ATTACHMENT_START + str(next_) \
@@ -33,6 +37,9 @@ def check_attachement_str(next_, module,recipient_id,ink_story,return_value):
 
 def attachement_check(session_return):
 
+    ATTACHMENT_END = current_app.config["ATTACHMENT_END"]
+    ATTACHMENT_START = current_app.config["ATTACHMENT_START"]
+
     if ATTACHMENT_START in session_return:
         print("found",ATTACHMENT_START)
         session_return_edited = ""
@@ -48,6 +55,10 @@ def attachement_check(session_return):
     return session_return
 
 if __name__ == '__main__':
+
+    ATTACHMENT_END = current_app.config["ATTACHMENT_END"]
+    ATTACHMENT_START = current_app.config["ATTACHMENT_START"]
+    
     text = "hello\nikbentako\n" + ATTACHMENT_START+"dir/filename"+ATTACHMENT_END+\
     "\nlastline"
     print(text)

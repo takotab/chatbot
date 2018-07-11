@@ -5,4 +5,4 @@ To run:
 
 or build and run the dockerfile (make sure you open port 8080)
 
-The first run will download the preperation files.
+The first run will download the preperation files (2GB). 

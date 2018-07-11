@@ -1,5 +1,8 @@
 # chatbot-TINA
 
-Download the preperation files from:
+To run:
+`bash start.sh`
 
-<https://drive.google.com/file/d/1-oSe1f08q2MA6s4ix_5ELFZ6U5wp-aKP/view?usp=sharing>
+or build and run the dockerfile (make sure you open port 8080)
+
+The first run will download the preperation files.

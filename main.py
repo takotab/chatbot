@@ -13,11 +13,11 @@
 # limitations under the License.
 
 import argparse
-import bot
+import web_interface
 import config
 # config = None
 
-app = bot.create_app(config)
+app = web_interface.create_app(config)
 
 
 # [START books_queue]

@@ -39,3 +39,6 @@ PROJECT_ID = 'chatbot-tina'
 WEIGHTS_DIR = os.path.join("entity_rec","model_weights")
 
 PREPERATION_DIR = os.path.join("preperation_files")
+
+ATTACHMENT_START = "$attachment,"
+ATTACHMENT_END = ",attachment$"

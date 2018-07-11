@@ -6,6 +6,10 @@ import requests
 # from entity_rec.match import match_text
 # use python3 -m pytest tests/ to test
 
+def test_interface():
+    url = 'http://' + 'localhost:8080'
+    response = requests.get(url)
+    assert response.status_code == 200
 
 def test_start(id_ = '25468eee'):
     """

@@ -15,7 +15,7 @@ N = 20
 
 
 def create_app(config, debug=False, testing=False, config_overrides=None):
-
+    print("hello from web interface")
     app = Flask(__name__)
     app.config.from_object(config)
 
@@ -25,18 +25,18 @@ def create_app(config, debug=False, testing=False, config_overrides=None):
         logging.basicConfig(level=logging.INFO)
 
     @app.route("/")
-    def home():                
+    def home():
         id_ = ''.join(random.choice(string.ascii_uppercase + string.digits)
                       for _ in range(N))
         print("new user:",id_)
         return render_template("index.html", random_id=id_)
 
     @app.route("/get")
-    def get_bot_response():        
+    def get_bot_response():
         userText, id_ = request.args.get('msg').split("__id__")
         with app.app_context():
             session_return = bot.message(id_, userText)
-        
+
         #attachement check
         session_return = attachement_check(session_return)
 
@@ -63,6 +63,6 @@ def create_app(config, debug=False, testing=False, config_overrides=None):
     #     return """
     #     An internal error occurred.
     #     """, 500
-    
+
 
     return app

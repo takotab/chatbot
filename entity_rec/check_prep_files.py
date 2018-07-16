@@ -6,7 +6,6 @@ logging.getLogger().addHandler(logging.StreamHandler())
 
 def init():
     if _no_prep():
-        
         zip_destination = os.path.join(os.getcwd(),"prepfiles.zip")
         destination = os.path.join(os.getcwd())
 
@@ -17,7 +16,7 @@ def init():
         else:
             _download()
 
-def _no_prep():   
+def _no_prep():
     print("checking if everyting is in place")
     cwd = os.getcwd()
     if os.path.isdir(os.path.join(cwd,"preperation_files")):
@@ -44,7 +43,7 @@ def _download():
     download_file_from_google_drive(file_id, zip_destination)
     print(time.time()-start_time)
     destination = os.path.join(os.getcwd())
-    # import cloudstorage as gcs 
+    # import cloudstorage as gcs
     # filenames = ['nl-embedding.pckl',
     #             'list_w_cities.txt',
     #             'list_w_first_names.txt',
@@ -81,7 +80,7 @@ def download_file_from_google_drive(id, destination):
         params = { 'id' : id, 'confirm' : token }
         response = session.get(URL, params = params, stream = True)
 
-    save_response_content(response, destination)    
+    save_response_content(response, destination)
 
 def get_confirm_token(response):
     for key, value in response.cookies.items():
@@ -97,4 +96,3 @@ def save_response_content(response, destination):
         for chunk in response.iter_content(CHUNK_SIZE):
             if chunk: # filter out keep-alive new chunks
                 f.write(chunk)
-

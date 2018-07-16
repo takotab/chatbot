@@ -103,7 +103,9 @@ class dialog:
 
                 del model
             elif self.lang == 'NL':
+                print("hoi  !!!")
                 from .embedding.lang import NL
+                print("hoi  !!!!!")
                 # self.emb = lang_wrapper.language("NL")
                 self.emb_array = NL.EMB_ARRAY
                 self.int2str = NL.INT2STR

@@ -176,6 +176,8 @@ class nlp_class:
                            "(dag).*(verlof)": {"key": "intent_dwg_27", "case_insenstive": False},
                            "Tako": {"key": "nlp_f_name", "case_insenstive": True},
                            "Tabak": {"key": "nlp_l_name", "case_insenstive": True},
+                           "Johan": {"key": "nlp_f_name", "case_insenstive": False},
+                           "Lugthart": {"key": "nlp_l_name", "case_insenstive": False},
                            }
         for regex in dict_with_regex:
             if "case_insenstive" in dict_with_regex[regex]:

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="207e9f93-83c9-4c76-bdb6-b37aeb785aab" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/chatbot.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_interface/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_interface/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="nlp.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nlp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bot/nlp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
+            <state relative-caret-position="506">
+              <caret line="166" column="27" selection-start-line="166" selection-start-column="27" selection-end-line="166" selection-end-column="27" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -30,11 +25,64 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="modules.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bot/modules.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-153">
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-85">
+              <folding>
+                <element signature="e#576#591#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="attachement.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web_interface/attachement.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web_interface/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web_interface/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tako and</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="johanlugthart &lt;41291208+johanlugthart@users.noreply.github.com&gt;" />
         <option value="Johan" />
       </list>
     </option>
@@ -44,12 +92,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/bot/nlp.py" />
+        <option value="$PROJECT_DIR$/web_interface/templates/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
+    <option name="x" value="673" />
+    <option name="width" value="1254" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -73,6 +122,11 @@
               <item name="chatbot" type="b2602c69:ProjectViewProjectNode" />
               <item name="chatbot" type="462c0819:PsiDirectoryNode" />
               <item name="entity_rec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chatbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chatbot" type="462c0819:PsiDirectoryNode" />
+              <item name="web_interface" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -107,22 +161,31 @@
       <option name="presentableId" value="Default" />
       <updated>1531744483329</updated>
     </task>
+    <task id="LOCAL-00001" summary="geen ./idea meer">
+      <created>1531746853786</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1531746853786</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="673" y="0" width="1254" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947807" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="R Packages" order="3" />
-      <window_info anchor="right" id="R Graphics" order="3" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="7" side_tool="true" visible="true" weight="0.32942432" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50080776" side_tool="true" visible="true" weight="0.32942432" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1930533" />
+      <window_info anchor="right" id="R Packages" order="3" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.49919224" visible="true" weight="0.32942432" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -131,7 +194,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -139,7 +201,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Mijn bazennaam werkt nu. :-) Hopelijk&#10;NOg in testfase" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mijn bazennaam werkt nu. :-) Hopelijk&#10;NOg in testfase" />
+    <MESSAGE value="geen ./idea meer" />
+    <option name="LAST_COMMIT_MESSAGE" value="geen ./idea meer" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bot/nlp.py">
@@ -154,11 +217,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bot/nlp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
+        <state relative-caret-position="506">
+          <caret line="166" column="27" selection-start-line="166" selection-start-column="27" selection-end-line="166" selection-end-column="27" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/modules.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <folding>
+            <element signature="e#576#591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_interface/attachement.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_interface/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_interface/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
         </state>
       </provider>
     </entry>

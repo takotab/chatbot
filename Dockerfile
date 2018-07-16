@@ -27,6 +27,9 @@ COPY requirements.txt /app/requirements.txt
 WORKDIR /app
 RUN pip install -r requirements.txt
 #COPY prepfiles.zip /app/prepfiles.zip
+
+ADD https://drive.google.com/file/d/1-oSe1f08q2MA6s4ix_5ELFZ6U5wp-aKP/view?usp=sharing /app
+
 COPY . /app
 
 # Make port 8080 available to the world outside this container

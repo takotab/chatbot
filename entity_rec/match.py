@@ -5,6 +5,17 @@ from entity_rec.embedding import language as Language
 
 
 def match_text(value, options, languege=None):
+    """
+    Will check which option has the highest probality over all the button-options.
+
+        input:
+            Value   str of userinput
+            options the button answers
+
+        Output:
+            a dict consisting of the best option and its confidence
+    """
+
     if languege is None:
         languege = Language()
 

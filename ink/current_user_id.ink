@@ -8,14 +8,14 @@ $write,intent,temp_intent
 
 =firstloop
 Om je te kunnen helpen met administrative handelingen, moet ik eerst bevestigen wie je bent.
-{~Hoe heet je?|Wat is je voor en achternaam?|Hoe kan ik je noemen?|Zou je me kunnen vertellen hoe je heet?}
+{~Hoe heet je?|Wat is je voor- en achternaam?|Hoe kan ik je noemen?|Zou je me kunnen vertellen hoe je heet?}
 $wait,1,nlp_f_name,nlp_l_name,intent
 -> nameseeking
 
 =nameseeking
 {not nlp_f_name_defined:
 {not nlp_l_name_defined:
-Ik heb je voor en achternaam nodig! 
+Ik heb je voor- en achternaam nodig!
 $wait,1,nlp_f_name,nlp_l_name,intent
 -> nameseeking
 }

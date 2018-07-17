@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="207e9f93-83c9-4c76-bdb6-b37aeb785aab" name="Default" comment="Mijn bazennaam werkt nu. :-) Hopelijk&#10;NOg in testfase">
-      <change beforePath="$PROJECT_DIR$/bot/nlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/nlp.py" afterDir="false" />
+    <list default="true" id="207e9f93-83c9-4c76-bdb6-b37aeb785aab" name="Default" comment="Artificial Intelligence and team (ipv Tako)">
+      <change afterPath="$PROJECT_DIR$/ink/current_auto_huren" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ink/current_car_rental" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ink/current_inky.ink" beforeDir="false" afterPath="$PROJECT_DIR$/ink/current_inky.ink" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -11,39 +15,96 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="current_administrative.ink" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/ink/current_administrative.ink">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="187">
+                    <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="current_waterstand.ink" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/ink/current_waterstand.ink">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-153" />
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="nlp.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bot/nlp.py">
+      <file leaf-file-name="current_auto_huren" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ink/current_auto_huren">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="187" column="17" lean-forward="true" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="current_inky.ink" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ink/current_inky.ink">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tako and team</find>
+      <find>tako and</find>
+      <find>artificial in</find>
+      <find>artifi</find>
+      <find>jazeker</find>
+      <find>button</find>
+      <find>waterstand doorgeven</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="sibren &lt;sibren.jansen@devoteam.com&gt;" />
+        <option value="s" />
+        <option value="sibren.j" />
+        <option value="sibren.jansen@devoteam.com" />
+        <option value="sibren" />
         <option value="Johan" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/bot/nlp.py" />
+        <option value="$PROJECT_DIR$/web_interface/templates/index.html" />
+        <option value="$PROJECT_DIR$/tests/test_entity_rec_test.py" />
+        <option value="$PROJECT_DIR$/entity_rec/match.py" />
+        <option value="$PROJECT_DIR$/ink/current_inky.ink" />
+        <option value="$PROJECT_DIR$/ink/current_car_rental" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="648" />
+    <option name="y" value="-9" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -52,7 +113,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -70,14 +130,26 @@
               <item name="chatbot" type="462c0819:PsiDirectoryNode" />
               <item name="entity_rec" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="chatbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chatbot" type="462c0819:PsiDirectoryNode" />
+              <item name="ink" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chatbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chatbot" type="462c0819:PsiDirectoryNode" />
+              <item name="ink_story" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -102,18 +174,39 @@
       <option name="presentableId" value="Default" />
       <updated>1531744483329</updated>
     </task>
+    <task id="LOCAL-00001" summary="Artificial Intelligence and team (ipv Tako)">
+      <created>1531749865208</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1531749865208</updated>
+    </task>
+    <task id="LOCAL-00002" summary="New requirements for python tests">
+      <created>1531815971579</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1531815971579</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Artificial Intelligence and team (ipv Tako)">
+      <created>1531820928383</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1531820928383</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947807" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12447917" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="R Packages" order="3" />
-      <window_info anchor="right" id="R Graphics" order="3" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="7" side_tool="true" visible="true" weight="0.32942432" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005208" side_tool="true" visible="true" weight="0.32943678" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.49947917" visible="true" weight="0.32943678" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49895832" weight="0.32943678" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -121,12 +214,13 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -134,16 +228,151 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Mijn bazennaam werkt nu. :-) Hopelijk&#10;NOg in testfase" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mijn bazennaam werkt nu. :-) Hopelijk&#10;NOg in testfase" />
+    <MESSAGE value="New requirements for python tests" />
+    <MESSAGE value="Artificial Intelligence and team (ipv Tako)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Artificial Intelligence and team (ipv Tako)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bot/nlp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
+        <state relative-caret-position="884">
+          <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_interface/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/nlp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2975">
+          <caret line="175" column="97" lean-forward="true" selection-start-line="175" selection-start-column="97" selection-end-line="175" selection-end-column="97" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/nlp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3128">
           <caret line="187" column="17" lean-forward="true" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/inital_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="59" column="55" lean-forward="true" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_entity_rec_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="52" selection-start-line="52" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/nlp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1207">
+          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_interface/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="44" column="56" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ink_story/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ink/current_factuur.ink">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity_rec/match.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_interface/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ink/current_administrative.ink">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ink/current_waterstand.ink">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ink/current_inky.ink">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ink/current_auto_huren">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>

@@ -26,6 +26,7 @@ def test_start(id_='25468eee'):
     assert "Auto huren" in response_content
 
 testdata = [
+    ("Auto huren"),
     ("aantal passagiers"),
     ("jaartal"),
 ]

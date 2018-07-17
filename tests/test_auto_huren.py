@@ -32,7 +32,7 @@ testdata = [
 
 @pytest.mark.parametrize("keuze_optie", testdata)
 def test_auto_kiezen(keuze_optie):
-    conver = conversation()
+    conver = Conversation()
     N = 4
     id_ = ''.join(random.choice(string.ascii_uppercase + string.digits)
                       for _ in range(N))

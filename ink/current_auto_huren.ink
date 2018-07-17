@@ -16,10 +16,10 @@ Met hoeveel passagiers wilt u op reis gaan?
 = jaartal
 Hoe nieuw wilt u uw auto hebben?
 +$button Vóór 2000
--> auto_huren.nieuw
+-> auto_huren.oud
 
 +$button Na 2000
--> auto_huren.oud
+-> auto_huren.nieuw
 
 = kleine_auto
 We hebben deze opties aan kleine auto's beschikbaar. Welke heeft uw voorkeur?

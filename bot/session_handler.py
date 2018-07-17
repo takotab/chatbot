@@ -2,7 +2,7 @@ import logging
 import time
 import datetime
 import codecs
-import clr # pylint: disable=E0401
+import clr  # pylint: disable=E0401
 from flask import Flask, current_app
 from .weather import weather
 import os
@@ -23,7 +23,7 @@ import entity_rec
 
 
 def interact(ink_story, recipient_id, msg):
-    
+
     # function message
     if "intent_stop_" in msg:
         if "intent_stop_0" == msg:
@@ -35,9 +35,11 @@ def interact(ink_story, recipient_id, msg):
             return last_return_value
 
     if len(ink_story[recipient_id].currentChoices):
-        options = [ink_choice.text.replace("$button","").replace("$qr","") for ink_choice in ink_story[recipient_id].currentChoices]
+        options = [ink_choice.text.replace("$button", "").replace(
+            "$qr", "") for ink_choice in ink_story[recipient_id].currentChoices]
         msg = nlpclient.match_text(msg, options)
 
+    # legacy from fb messenger
     if "$choice_" in msg:
         msg_split = msg.split("_")
         print("controller is going to make choice ", msg_split[1])
@@ -46,7 +48,10 @@ def interact(ink_story, recipient_id, msg):
     else:
         # normal message
         module.set_prev_intent(ink_story, recipient_id)
+
+        # here NLP is done
         ink_story = nlpclient.interpert_message(ink_story, recipient_id, msg)
+
         if module.info_dict[recipient_id]["prev_intent"] == "":
             check_intent(ink_story, recipient_id)
         return_value, stop = do_intent_stop_stuff(ink_story, recipient_id)
@@ -111,8 +116,9 @@ def inky_brain(ink_story, recipient_id, choice=None):
                 ink_story = module.make_meeting(ink_story, recipient_id)
             if next_.startswith("$wait"):
                 ink_story = module.wait(ink_story, recipient_id, next_)
-            
-            ink_story, return_value = check_attachement_str(next_, module, recipient_id, ink_story, return_value)
+
+            ink_story, return_value = check_attachement_str(
+                next_, module, recipient_id, ink_story, return_value)
 
             if next_.startswith("$sql_vergelijken"):
                 ink_story = module.sql_vergelijken(ink_story, recipient_id)
@@ -121,7 +127,7 @@ def inky_brain(ink_story, recipient_id, choice=None):
             next_ = ""
         elif next_.startswith("%"):
             next_ = ""
-        
+
         return_value[recipient_id] += str(next_) + '\n'
 
         print("cancontinue = ", ink_story[recipient_id].canContinue,
@@ -139,7 +145,7 @@ def inky_brain(ink_story, recipient_id, choice=None):
             if not text_options.startswith("%"):
                 if "$button" in text_options:
                     print("Debug: Narrative session handler: Button recognized")
-                    return_value[recipient_id] += str(text_options) 
+                    return_value[recipient_id] += str(text_options)
                 else:
                     return_value[recipient_id] += "$qr" + str(text_options)
 

@@ -11,6 +11,7 @@ INCLUDE synthesis_randomdata.ink // only for data synthesis
 INCLUDE vesta30.ink
 INCLUDE current_user_id.ink
 INCLUDE current_factuur.ink
+INCLUDE current_auto_huren.ink
 
 {~Hoi!|Hey!|Hallo!|Gegroet!} <>
 Ik ben de Watergroep Virtual Agent!
@@ -33,7 +34,7 @@ Waarmee kan ik u {~helpen|van dienst zijn|uit de brand helpen}?
  -> address_change
 + [Interne klant]
  -> initial_internal_customer
- + [Auto huren]
++ [Auto huren]
  ~ intent = "auto_huren"
  -> auto_huren
 

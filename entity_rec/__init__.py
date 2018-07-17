@@ -32,10 +32,9 @@ GINFO = {"procces": procces,
          "extra_info_place": tf.get_collection("extra_info_place")[0]}
 
 
-
 def predict(text):
 
-    return_dict =  _tfInference(text)
+    return_dict = _tfInference(text)
     return return_dict
 
 
@@ -54,12 +53,14 @@ def _tfInference(text):
                  ginfo["keep_prob"]: 1}
 
     # print(feed_dict)
+    # logits, pred_goal zijn de end-point tensors van het model
     y_, g_ = SESS.run([ginfo['logits'], ginfo['pred_goal']],
                       feed_dict=feed_dict)
+
+    # y_ is the entity
+    # g_ is the intent
+
 #     print(np.round(y_,1))
     # print(g_.shape)
     return ginfo['procces'].get_info(y=y_, x=x_, seq_len=seq_len, intent=g_, sen_dict=sens_dict, plot=False)
 #     y_output_model = y_
-
-
-

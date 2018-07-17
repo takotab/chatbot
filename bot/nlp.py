@@ -41,6 +41,7 @@ class nlp_class:
             return ink_story
 
         resp = entity_rec.predict(msg)
+        # response is dict like jsonfile
         try:
             pass
             # url = 'http://0.0.0.0:5081/dt/text/entities?text=' + web_msg
@@ -88,6 +89,8 @@ class nlp_class:
 
         goal_legend = ["unknown", "context_weather",
                        "context_sql_lookup", "context_sql_change", "context_sql_count"]
+
+        # Rule-based NLP
         if "morgen" in msg:
             self.module.set_variable(
                 ink_story, recipient_id, "nlp_time", "morgen")

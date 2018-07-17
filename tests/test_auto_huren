@@ -48,6 +48,6 @@ def test_auto_kiezen(keuze_optie):
 
     response_content = conver.interact(id_, "opel corsa")
 
-    assert "bedankt voor uw keuze. De auto" in response_content
+    assert "Het kiezen van een auto is niet gelukt" in response_content
 
 

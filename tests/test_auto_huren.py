@@ -41,7 +41,7 @@ def test_auto_kiezen(keuze_optie):
 
     response_content = conver.interact(id_, "aantal passagiers")
 
-    assert "Hoe nieuw wilt u" in response_content
+    assert "Met hoeveel" in response_content
 
     response_content = conver.interact(id_, "1-2")
 

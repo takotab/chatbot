@@ -3,27 +3,8 @@ import pytest
 import random
 import string
 import requests
+from inital_test import test_start
 from tests import Conversation
-
-
-def test_interface():
-    url = 'http://' + 'localhost:8080'
-    response = requests.get(url)
-    assert response.status_code == 200
-
-
-def test_start(id_='25468eee'):
-    """
-
-    """
-    conver = Conversation()
-    response_content = conver.interact(id_, 'e')
-
-    assert "Waterstand doorgeven" in response_content
-    assert "Watergebruik analyse" in response_content
-    assert "Factuur inzien" in response_content
-    assert "Adreswijziging" in response_content
-    assert "Auto huren" in response_content
 
 testdata = [
     ("aantal passagiers"),
@@ -38,6 +19,11 @@ def test_auto_kiezen(keuze_optie):
                       for _ in range(N))
     test_start(id_ = id_)
 
+
+    response_content = conver.interact(id_, "Auto huren")
+
+    assert "Op welke manier wilt u" in response_content
+
     response_content = conver.interact(id_, "aantal passagiers")
 
     assert "Met hoeveel" in response_content
@@ -48,6 +34,6 @@ def test_auto_kiezen(keuze_optie):
 
     response_content = conver.interact(id_, "opel corsa")
 
-    assert "Het kiezen van een auto is niet gelukt" in response_content,conver
+    assert "Het kiezen van een auto is niet gelukt" in response_content
 
 

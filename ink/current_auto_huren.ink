@@ -1,6 +1,4 @@
-== car rental options ==
-
-== auto_kiezen
+== auto_huren
 Op welke manier wilt u de juiste auto kiezen?
 +$button aantal passagiers
  -> auto_kiezen.aantal_passagiers

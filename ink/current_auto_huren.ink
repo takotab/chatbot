@@ -1,25 +1,25 @@
 == auto_huren
 Op welke manier wilt u de juiste auto kiezen?
 +$button aantal passagiers
- -> auto_kiezen.aantal_passagiers
+-> auto_huren.aantal_passagiers
 +$button jaartal
--> auto_kiezen.jaartal
+-> auto_huren.jaartal
 
 = aantal_passagiers
 Met hoeveel passagiers wilt u op reis gaan?
 +$button 1-2
--> auto_kiezen.kleine_auto
+-> auto_huren.kleine_auto
 
 +$button 3-5
--> auto_kiezen.grote_auto
+-> auto_huren.grote_auto
 
 = jaartal
 Hoe nieuw wilt u uw auto hebben?
 +$button Vóór 2000
--> auto_kiezen.nieuw
+-> auto_huren.nieuw
 
 +$button Na 2000
--> auto_kiezen.oud
+-> auto_huren.oud
 
 = kleine_auto
 We hebben deze opties aan kleine auto's beschikbaar. Welke heeft uw voorkeur?

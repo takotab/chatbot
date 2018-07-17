@@ -32,3 +32,20 @@ class Conversation():
 
     def __repr__(self):
         return "\n".join(self.conversation)
+
+
+def test_start(conver=None):
+    """
+
+    """
+    if conver is None:
+        conver = Conversation()
+    response_content = conver.interact('e')
+
+    assert "Waterstand doorgeven" in response_content
+    assert "Watergebruik analyse" in response_content
+    assert "Factuur inzien" in response_content
+    assert "Adreswijziging" in response_content
+    assert "Auto huren" in response_content
+    # assert "Wie ben jij?" in response_content
+    return conver

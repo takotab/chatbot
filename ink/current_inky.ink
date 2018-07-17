@@ -18,7 +18,7 @@ Waarmee kan ik u {~helpen|van dienst zijn|uit de brand helpen}?
 -> initial_quickreplies
 
 == initial_quickreplies ==
-// * %go Waterstand doorgeven | Watergebruik analyse | Factuur inzien | Adreswijziging
+// * %go Waterstand doorgeven | Watergebruik analyse | Factuur inzien | Adreswijziging | Auto huren
 + [Waterstand doorgeven] 
  ~ intent = "waterstand_doorgeven"
  -> waterstand.doorgeven
@@ -33,6 +33,8 @@ Waarmee kan ik u {~helpen|van dienst zijn|uit de brand helpen}?
  -> address_change
 + [Interne klant]
  -> initial_internal_customer
+ + [Auto huren]
+ ~ intent = "auto_huren"
 
 --> intent_direct // dit doet iets??
 

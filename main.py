@@ -18,7 +18,7 @@ import config
 # config = None
 
 app = web_interface.create_app(config)
-
+print("hello earlier in start")
 
 # [START books_queue]
 # Make the queue available at the top-level, this allows you to run
@@ -39,4 +39,5 @@ if __name__ == '__main__':
     parser.add_argument("--port", type=int, default=8080,
                         help="The port to be exposted")
     params = parser.parse_args()
+    print("hello from main.py ")
     app.run(host='0.0.0.0', port=params.port, debug=True)

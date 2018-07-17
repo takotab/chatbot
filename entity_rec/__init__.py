@@ -11,6 +11,7 @@ check_prep_files.init()
 # till that time please do not try to understand dialog_ and procces they are awefull
 
 dialog_ = dialog(word2vec=True, lang='NL', max_words=100)
+print("hoi  !!!")
 procces = procces_data.prep_data(dialog_class=dialog_, chance_on_name=0)
 
 SESS = tf.Session()

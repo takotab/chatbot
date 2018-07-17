@@ -36,7 +36,7 @@ Waarmee kan ik u {~helpen|van dienst zijn|uit de brand helpen}?
  -> initial_internal_customer
 + [Auto huren]
  ~ intent = "auto_huren"
- -> auto_huren
+ -> current_auto_huren
 
 --> intent_direct // dit doet iets??
 

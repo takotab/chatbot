@@ -19,6 +19,11 @@ RUN apt-get install -y mono-complete=5.4.1.6\* \
 
 RUN pip install pycparser \
   && git clone https://github.com/pythonnet/pythonnet
+  
+# https://github.com/pythonnet/pythonnet/issues/562#issuecomment-339044574
+RUN pip install pip --upgrade && \
+  pip install setuptools --upgrade 
+
 RUN python pythonnet/setup.py bdist_wheel \
   && pip install --no-index --find-links=./pythonnet/dist/ pythonnet
 

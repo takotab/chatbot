@@ -1,5 +1,7 @@
 FROM jonemo/pythonnet:python3.6.4-mono4.8.0.524-pythonnet2.3.0
 
+RUN pip install --upgrade pip
+RUN pip install tensorflow==1.15.0
 # littlebit of a change to make debug quicker
 COPY requirements.txt /app/requirements.txt
 WORKDIR /app

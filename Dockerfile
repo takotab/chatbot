@@ -1,22 +1,4 @@
-FROM python:3.5.5-jessie
-
-# https://www.mono-project.com/download/stable/#download-lin
-RUN sudo apt install gnupg ca-certificates
-RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
-RUN sudo apt update
-
-RUN sudo apt install mono-devel
-
-# https://github.com/pythonnet/pythonnet/issues/562#issuecomment-339044574
-RUN pip install pip --upgrade && \
-  pip install setuptools --upgrade 
-
-RUN pip install git+https://github.com/pythonnet/pythonnet 
-
-#https://github.com/pythonnet/pythonnet/issues/562#issuecomment-339057789
-# RUN python pythonnet/setup.py bdist_wheel \
-#   && pip install --no-index --find-links=./pythonnet/dist/ pythonnet
+FROM jonemo/pythonnet:python3.6.4-mono4.8.0.524-pythonnet2.3.0
 
 # littlebit of a change to make debug quicker
 COPY requirements.txt /app/requirements.txt
